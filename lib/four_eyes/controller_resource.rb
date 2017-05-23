@@ -16,7 +16,6 @@ module FourEyes
 
         action = FourEyes::Action.new(resource_class_name: resource_class_name,
                                       maker_resource_id: resource_id,
-                                      resource_class_name: resource_class_name,
                                       action_type: 'action_create',
                                       object_resource_class_name: object_class_name,
                                       status: 'Initiated',
