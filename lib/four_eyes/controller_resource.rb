@@ -11,12 +11,14 @@ module FourEyes
         "#{method} #{args}"
         resource_class_name = args[0]
         resource_id = args[1]
-        object_class_name = args[2]
-        data = args[3]
+        checker_role = args[2]
+        object_class_name = args[3]
+        data = args[4]
 
         action = FourEyes::Action.new(resource_class_name: resource_class_name,
                                       maker_resource_id: resource_id,
                                       action_type: 'action_create',
+                                      checker_resource_role_id: checker_role,
                                       object_resource_class_name: object_class_name,
                                       status: 'Initiated',
                                       data: data)
@@ -34,13 +36,15 @@ module FourEyes
       controller_class.send :define_method, method do |*args|
         resource_class_name = args[0]
         resource_id = args[1]
-        object_class_name = args[2]
-        object_resource_id = args[3]
-        data = args[4]
+        checker_role = args[2]
+        object_class_name = args[3]
+        object_resource_id = args[4]
+        data = args[5]
 
         action = FourEyes::Action.new(resource_class_name: resource_class_name,
                                       maker_resource_id: resource_id,
                                       action_type: 'action_update',
+                                      checker_resource_role_id: checker_role,
                                       object_resource_class_name: object_class_name,
                                       object_resource_id: object_resource_id,
                                       status: 'Initiated',
@@ -59,13 +63,15 @@ module FourEyes
       controller_class.send  :define_method, method do |*args|
         resource_class_name = args[0]
         resource_id = args[1]
-        object_class_name = args[2]
-        object_resource_id = args[3]
-        data = args[4]
+        checker_role = args[2]
+        object_class_name = args[3]
+        object_resource_id = args[4]
+        data = args[5]
 
         action = FourEyes::Action.new(resource_class_name: resource_class_name,
                                       maker_resource_id: resource_id,
                                       action_type: 'action_delete',
+                                      checker_resource_role_id: checker_role,
                                       object_resource_class_name: object_class_name,
                                       object_resource_id: object_resource_id,
                                       status: 'Initiated',
@@ -84,14 +90,16 @@ module FourEyes
       controller_class.send  :define_method, method do |*args|
         resource_class_name = args[0]
         resource_id = args[1]
-        object_class_name = args[2]
-        object_resource_id = args[3]
-        action = args[4]
-        data = args[5]
+        checker_role = args[2]
+        object_class_name = args[3]
+        object_resource_id = args[4]
+        action = args[5]
+        data = args[6]
 
         action = FourEyes::Action.new(resource_class_name: resource_class_name,
                                       maker_resource_id: resource_id,
                                       action_type: action,
+                                      checker_resource_role_id: checker_role,
                                       object_resource_class_name: object_class_name,
                                       object_resource_id: object_resource_id,
                                       status: 'Initiated',
