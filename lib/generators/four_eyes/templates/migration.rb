@@ -5,8 +5,8 @@ class CreateFourEyesTables < ActiveRecord::Migration
       t.string :resource_class_name
       t.integer :maker_resource_id
       t.integer :checker_resource_id
-      t.integer :maker_resource_role_id
-      t.integer :checker_resource_role_id
+      t.string :maker_resource_role
+      t.string :checker_resource_role
       t.string :object_resource_class_name
       t.integer :object_resource_id
       t.json    :data
